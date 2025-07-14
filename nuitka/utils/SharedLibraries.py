@@ -451,7 +451,7 @@ def _filterPatchelfErrorOutput(stderr):
     non_errors = []
 
     def isNonErrorExit(line):
-        if b"cannot find section '.dynamic'" in line:
+        if b"cannot find section '.dynamic'" or b"not an ELF executable" in line:
             non_errors.append(line)
 
             return True
